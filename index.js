@@ -155,3 +155,9 @@ const questions = {
         },
     ],
 };
+
+function addNewEmployee(){
+    inquirer
+    .prompt(chooseMember)
+    .then()
+}
