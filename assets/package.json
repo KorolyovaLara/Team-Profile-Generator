@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/KorolyovaLara/Team-Profile-Generator#readme",
   "dependencies": {
-    "inquirer": "^8.0.0"
+    "email-validator": "^2.0.4",
+    "inquirer": "^8.0.0",
+    "jest": "^26.6.3"
   }
 }
