@@ -1,0 +1,29 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "all required packages to run the application",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KorolyovaLara/Team-Profile-Generator.git"
+  },
+  "keywords": [
+    "generator",
+    "team-generator"
+  ],
+  "author": "Larysa Korolyova <larakorolyova@gmail.com> (https://github.com/KorolyovaLara)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KorolyovaLara/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/KorolyovaLara/Team-Profile-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
