@@ -66,6 +66,92 @@ const questions = {
             choices: ["yes", "no"],
         },
     ],
-    Engineer: [],
-    Intern: [],
+    Engineer: [
+        {
+            type: "input",
+            name: "name",
+            message: "What is the engineer's name?",
+            validate: (value) => {
+               if (value) {return true}
+               else {return "Please enter engineer's name."} 
+            },
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is the engineer's id?",
+            validate: (value) => {
+               if (value) {return true}
+               else {return "Please enter engineer's id."} 
+            },
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the engineer's email?",
+            validate: (value) => {
+               if (emailValidator.validate(value)) {return true}
+               else {return "Please enter valid email address."} 
+            },
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "What is the engineer's GitHub username?",
+            validate: (value) => {
+               if (value) {return true}
+               else {return "Please enter engineer's GitHub username."} 
+            },
+        },
+        {
+            type: "list",
+            name: "addNew",
+            message: "Do you want to add another employee?",
+            choices: ["yes", "no"],
+        },
+    ],
+    Intern: [
+        {
+            type: "input",
+            name: "name",
+            message: "What is the intern's name?",
+            validate: (value) => {
+               if (value) {return true}
+               else {return "Please enter intern's name."} 
+            },
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is the intern's id?",
+            validate: (value) => {
+               if (value) {return true}
+               else {return "Please enter intern's id."} 
+            },
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the intern's email?",
+            validate: (value) => {
+               if (emailValidator.validate(value)) {return true}
+               else {return "Please enter valid email address."} 
+            },
+        },
+        {
+            type: "input",
+            name: "school",
+            message: "What school/university is the intern attending?",
+            validate: (value) => {
+               if (value) {return true}
+               else {return "Please enter the name of school/university."} 
+            },
+        },
+        {
+            type: "list",
+            name: "addNew",
+            message: "Do you want to add another employee?",
+            choices: ["yes", "no"],
+        },
+    ],
 };
