@@ -1,3 +1,7 @@
+
+# APPLE file
+.DS_Store
+
 # Logs
 logs
 *.log
