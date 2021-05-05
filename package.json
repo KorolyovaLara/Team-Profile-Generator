@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose test"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/KorolyovaLara/Team-Profile-Generator#readme",
   "dependencies": {
+    "chalk": "^4.1.1",
     "email-validator": "^2.0.4",
     "inquirer": "^8.0.0",
     "jest": "^26.6.3"

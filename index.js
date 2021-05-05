@@ -9,18 +9,30 @@ const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const Logger = require("./lib/Logger");
+
+// List of all variable
+const allMembers = [];
+const log = new Logger();
 
 // Selector for Member of the Team
-
 const chooseMember = [
     {
         type: "list",
-        name: "teamMember",
+        name: "role",
         message: "Please choose the role for the employee",
-        choices: ["Manager", "Engineer", "Intern"],
+        choices: // function to allow only one manager to be created
+        () => {
+            if (allMembers.some(member => member.role === "Manager")) {
+                return ["Engineer", "Intern"]
+            } else {
+                return ["Manager", "Engineer", "Intern"]
+            }
+        }
     }
 ];
 
+// All questions
 const questions = {
     Manager: [
         {
@@ -156,8 +168,42 @@ const questions = {
     ],
 };
 
+// Intro for Application
+const intoScreen = {
+    type: "list",
+    name: "welcomeScreen",
+    message : `
+    === Welcome to the Team Profile Generator Application ===
+
+    This program will allow the user to build a team and to create an HTML that will display the information for the team, including details of each member.
+
+    Do you wish to continue with this application?
+    `,
+	choices: ["Yes, Start Building Team", "No, Close Application"],
+};
+
+// Initial function to start the application
+function startApp() {
+    inquirer
+    .prompt(intoScreen)
+    .then((runApp) => {
+        if (runApp.welcomeScreen === "Yes, Start Building Team"){
+            log.cyan("Please submit information for Manager");
+            addNewEmployee();
+        } else {
+			log.magenta(`
+        === Application Closed ===
+        `);
+        }
+    });
+}
+
+
 function addNewEmployee(){
     inquirer
     .prompt(chooseMember)
-    .then()
+    .then(chooseMember)
 }
+
+// Call startApp function to start the Application
+startApp();
