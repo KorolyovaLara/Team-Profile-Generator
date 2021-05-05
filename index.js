@@ -75,7 +75,7 @@ const questions = {
             type: "list",
             name: "addNew",
             message: "Do you want to add another employee?",
-            choices: ["yes", "no"],
+            choices: ["Yes", "No"],
         },
     ],
     Engineer: [
@@ -198,11 +198,37 @@ function startApp() {
     });
 }
 
-
+// Function to add new team members
 function addNewEmployee(){
     inquirer
     .prompt(chooseMember)
-    .then(chooseMember)
+    .then((answer) => {
+        if (answer.role === "Manager") {
+            inquirer
+            .prompt(questions.Manager)
+            .then(answer => {
+                // save employee details
+                const manager = new Manager
+                (
+                    answer.name,
+                    answer.id,
+                    answer.email,
+                    answer.officeNumber,
+                );
+                // add details to team array
+                allMembers.push(manager);
+                if (answer.addNew === "Yes"){
+                    addNewEmployee();
+                } else {generateHTML()};
+            }) 
+        }
+
+    })
+}
+// Function to generate HTML
+function generateHTML() {
+    fs.writeFileSync(outputPath, render(allMembers), "utf-8");
+    process.exit(0);
 }
 
 // Call startApp function to start the Application
