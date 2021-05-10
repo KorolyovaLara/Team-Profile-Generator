@@ -40,7 +40,7 @@ const addManager = [
     name: "name",
     message: "What is the manager's name?",
     validate: function (txt) {
-      const letters = /^[A-Za-z]+$/.test(txt);
+      const letters = /^[a-z ,.'-]+$/i.test(txt);
       if (letters) {
         return true;
       } else {
@@ -123,7 +123,7 @@ const questions = {
       name: "name",
       message: "What is the engineer's name?",
       validate: function (txt) {
-        const letters = /^[A-Za-z]+$/.test(txt);
+        const letters = /^[a-z ,.'-]+$/i.test(txt);
         if (letters) {
           return true;
         } else {
@@ -181,7 +181,7 @@ const questions = {
       name: "name",
       message: "What is the intern's name?",
       validate: function (txt) {
-        const letters = /^[A-Za-z]+$/.test(txt);
+        const letters = /^[a-z ,.'-]+$/i.test(txt);
         if (letters) {
           return true;
         } else {
